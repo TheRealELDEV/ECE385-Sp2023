@@ -1,0 +1,17 @@
+module mux_3_1
+(
+input [15:0] in0, in1, in2,
+input [1:0] select,
+output logic [15:0] out
+);
+
+always_comb
+begin
+	case(select)
+		2'b01 : out = in1;
+		2'b10 : out = in2;
+		default: out = in0;
+	endcase
+end
+
+endmodule
